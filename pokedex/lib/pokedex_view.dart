@@ -10,7 +10,7 @@ class PokedexView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('P@kedex'),
+        title: Text('P@KEDEX'),
         backgroundColor: Colors.red,
       ),
       body: BlocBuilder<PokemonBloc, PokemonState>(
@@ -29,11 +29,16 @@ class PokedexView extends StatelessWidget {
                   onTap: () => BlocProvider.of<NavCubit>(context)
                       .showPokemonDetails(state.pokemonListing[index].id),
                   child: Card(
+                    color: Colors.green,
                     child: GridTile(
                       child: Column(
                         children: [
                           Image.network(state.pokemonListing[index].imageUrl),
-                          Text(state.pokemonListing[index].name),
+                          Text(
+                            state.pokemonListing[index].name,
+                            style: TextStyle(
+                                fontSize: 25.0, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),

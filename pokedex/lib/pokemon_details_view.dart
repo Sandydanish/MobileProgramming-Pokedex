@@ -24,7 +24,12 @@ class PokemonDetailsView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Image.network(details.imageUrl),
-                              Text(details.name),
+                              Text(
+                                details.name,
+                                style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: details.types
